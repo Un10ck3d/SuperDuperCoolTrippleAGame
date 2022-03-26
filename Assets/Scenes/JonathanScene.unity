@@ -789,7 +789,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ccd7dc6786f6ae11b0994c6ef998f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0}
   speed: 20
   jumpSpeed: 10
 --- !u!114 &2122962556
@@ -821,7 +820,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2122962555}
         m_TargetAssemblyTypeName: Movement, Assembly-CSharp
-        m_MethodName: Move
+        m_MethodName: UpdateDirection
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
