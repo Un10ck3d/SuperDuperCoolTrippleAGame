@@ -39,5 +39,5 @@ public class Movement : MonoBehaviour
     }
 
     // Checks if the player is touching the ground
-    private void OnCollisionEnter(Collision collision){touching = true;}
+    private void OnCollisionEnter(Collision collision){if(collision.gameObject.tag == "Ground") {touching = true;}}
 }
