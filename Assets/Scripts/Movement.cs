@@ -34,10 +34,10 @@ public class Movement : MonoBehaviour
         if(touching){
             // Adds force upwards to the player
             playerRigidbody.AddForce(transform.up * jumpSpeed, ForceMode.Impulse);
+            touching = false;
         }
     }
 
     // Checks if the player is touching the ground
     private void OnCollisionEnter(Collision collision){touching = true;}
-    private void OnCollisionExit(Collision collision){touching = false;}
 }
