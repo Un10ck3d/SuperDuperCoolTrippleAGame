@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     // Variables
     private Rigidbody playerRigidbody;
     private Vector2 direction;
-    private bool touching;
+    public bool touching = false;
     // Config
     public float speed = 20;
     public float jumpSpeed = 20;
@@ -16,6 +16,9 @@ public class Movement : MonoBehaviour
     // Awake (called before Start)
     private void Awake() {
         playerRigidbody = GetComponent<Rigidbody>();
+        // Lock and hide cursor
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     // Fixed Update (Physics)
     public void FixedUpdate() {
@@ -39,5 +42,9 @@ public class Movement : MonoBehaviour
     }
 
     // Checks if the player is touching the ground
-    private void OnCollisionEnter(Collision collision){if(collision.gameObject.tag == "Ground") {touching = true;}}
+    private void OnCollisionEnter(Collision collision){
+        if (collision.transform.name.Equals("Grounded")) {
+            Debug.Log("Touching");
+            if(collision.gameObject.tag == "Ground") {touching = true;}}
+        }
 }
